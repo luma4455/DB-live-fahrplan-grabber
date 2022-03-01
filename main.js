@@ -3,8 +3,10 @@ const nightmare = Nightmare({ show: true })
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
+var station = "EE";
+
 nightmare
-  .goto('https://iris.noncd.db.de/wbt/js/index.html?typ=ab&style=an&bhf=EE&Zeilen=15')
+  .goto('https://iris.noncd.db.de/wbt/js/index.html?typ=ab&style=an&bhf=' + station + '&Zeilen=15')
   .wait(1000)
   .evaluate(() => document.body.innerHTML)
   .end()
